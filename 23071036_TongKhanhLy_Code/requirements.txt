@@ -1,5 +1,7 @@
-opencv-python>=4.5     # SIFT is in the main package since 4.4
+opencv-python>=4.5,<5  # SIFT is in the main package since 4.4; AKAZE_create was removed in 5.0
 numpy
 matplotlib
+plotly                 # interactive point-cloud HTML (Part B)
+pandas                 # tables in the notebook
 scikit-image           # SSIM
 open3d                 # optional: only for view_point_cloud.py
