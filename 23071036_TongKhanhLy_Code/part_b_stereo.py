@@ -120,7 +120,7 @@ def make_bm(block, num_disp, min_disp=0):
 
 def make_sgbm(block, num_disp, min_disp=0):
     """Semi-Global Matching: minimise E(D) = Σ C(p,D_p) + Σ P1·[|ΔD|=1] + Σ P2·[|ΔD|>1],
-    aggregating the cost along 8 directions -> dense, piecewise-smooth disparity."""
+    aggregating the cost along several 1-D paths (OpenCV 3-way mode) -> dense, piecewise-smooth disparity."""
     return cv2.StereoSGBM_create(
         minDisparity=min_disp, numDisparities=num_disp, blockSize=block,
         P1=8 * 3 * block ** 2, P2=32 * 3 * block ** 2, disp12MaxDiff=1, uniquenessRatio=10,
